@@ -1,4 +1,5 @@
 # kubernetes-code-assessment
+# kubernetes-code-assessment
 objective:
 
 The Objective of this to perform the below taks mentioned tasks. These taks are related to installation, monitoring and maintenance of an application. The below taks are performed choosing the aws public cloud. 
@@ -25,18 +26,19 @@ Tasks:
 
 Prerequisite:
 Install the Latest AWS CLI
-Download and Install latest version of Terraform for windows - Terraform v0.12.5	
+Download and Install latest version of Terraform - Terraform v0.12.5	
 Configure AWS CLI Credentials
-Install and Configure kubectl for Amazon EKS
+Install and Configure kubectl 
 Install aws-iam-authenticator
 create an s3 bucket to maintain the terraform state ex: "code-assessment-terraform-state"
 
-Live Deployment Instructions:
+Deployment Instructions:
 
-As a developer the the list of above taks are considered to be involving 
+The list of below taks are considered to be involving 
 a) Creating the EKS Cluster
-b) Create two names space and deploy guest-book application
-c) Application Loadbalancer with respect of host header
+b) Create two namespaces 
+c) Deploy guest-book application on both
+d) Application Loadbalancer with host based routing (I am planning to use ALB ingress controller instead of nginx ingress controller becouse of AWS cloud)
 
 Assumong we've AWS account and Terraform installed. Configure IAM credentials so that Terraform will be able to act on our behalf.
 These resources to exist within security groups that allow communication and coordination are created within the module.
@@ -81,9 +83,9 @@ Execute the below commands for creating the developemnt and production name spac
 
 Verify the name space files created for development and production Refer file name : namespace-prod.json and namespace-dev.json
 
-Install guest.book application on bot the name spaces :
+Install guest.book application on both the namespaces :
 
-guest book app installtion name space : development
+guest book app installtion namespace : development
 
    cmd : sh guest_app_dev.sh
 
@@ -91,6 +93,10 @@ guest book app installtion name space : production
   
    cmd : sh guest_app_prod.sh
 
+
+Load test with Siege:
+
+To force the HPA into action, we can use Siege, an HTTP load testing and benchmark utility. Siege is a multi-threaded load testing tool and has a few other capabilities included to make it a good option for putting some force onto a simple web app.
 
 Web References
 https://docs.aws.amazon.com/eks/latest/userguide/getting-started.html
