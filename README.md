@@ -63,14 +63,18 @@ Download the code form the got repo : https://github.com/sabbaniraj13/kubernetes
    It creates kube_config.yaml in the current directory and aws_auth_configmap.yaml
 
 4. Test your connection with cluster
+
    cmd : kubectl get svc --kubeconfig=kube_config.yaml
    
 	NAME         TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)   AGE
+	
 	kubernetes   ClusterIP   10.100.0.1   <none>        443/TCP   68m
 
     λ kubectl get nodes --watch --kubeconfig=kube_config.yaml
 	NAME                           STATUS   ROLES    AGE   VERSION
+	
 	ip-172-31-80-85.ec2.internal   Ready    <none>   79m   v1.12.7
+	
 	ip-172-31-80-85.ec2.internal   Ready   <none>   79m   v1.12.7
 
     
@@ -79,6 +83,7 @@ b) Create two names space and deploy guest-book application
 Execute the below commands for creating the developemnt and production name space :
 
    cmd : kubectl apply -f namespace-dev.json --kubeconfig=kube_config.yaml
+   
          kubectl apply -f namespace-prod.json --kubeconfig=kube_config.yaml
 
 Verify the name space files created for development and production Refer file name : namespace-prod.json and namespace-dev.json
