@@ -1,5 +1,5 @@
 # kubernetes-code-assessment
-# kubernetes-code-assessment
+
 objective:
 
 The Objective of this to perform the below taks mentioned tasks. These taks are related to installation, monitoring and maintenance of an application. The below taks are performed choosing the aws public cloud. 
