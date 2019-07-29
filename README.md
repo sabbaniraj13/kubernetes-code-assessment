@@ -99,6 +99,7 @@ Load test with Siege:
 To force the HPA into action, we can use Siege, an HTTP load testing and benchmark utility. Siege is a multi-threaded load testing tool and has a few other capabilities included to make it a good option for putting some force onto a simple web app.
 
 Web References
+
 https://docs.aws.amazon.com/eks/latest/userguide/getting-started.html
 https://learn.hashicorp.com/terraform/aws/eks-intro
 https://docs.aws.amazon.com/eks/latest/userguide/getting-started-eksctl.html
